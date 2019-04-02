@@ -22,8 +22,17 @@
     },
     {
       "title": "Blog 5",
-      "content": "This is blog 5",
+      "content": "This is Blog 5",
       "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "NEHA",
+      "email": "nehachoudhary073@gmail.com",
+      "password": "N@neha123",
+      "repeatpassword": "N@neha123",
+      "id": 1
     }
   ]
 }

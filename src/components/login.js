@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class Login extends Component {
+
   render() {
     return(
       <div className="login">
         <form style={{border:'1px solid #ccc'}}>
           <h2>Login Form</h2>
+            <hr style={{margin:'14px'}}/>
               <div className="imgcontainer">
                 <img src={require("../Images/avatar.png")} alt="Avatar" class="avatar"/>
               </div>
@@ -27,7 +30,7 @@ class Login extends Component {
               </div>
 
               <div style={{backgroundColor:'rgb(225, 220, 210)'}}>
-                <button className="button" type="reset" className="cancelbtn">Cancel</button>
+                <button className="button" type="reset" value="reset" className="cancelbtn">Cancel</button>
                 <span className="psw">Forgot <a href="#">password?</a></span>                
               </div>
           </form>

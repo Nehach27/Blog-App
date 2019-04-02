@@ -89,72 +89,73 @@ class Blog extends Component {
     return (
       <div className="App container">
 
-      <h1>Blogs Page</h1>
+        <h1>Blogs Page</h1>
 
-      <Button className="my-1" color="primary" onClick={this.toggleNewBlogModal.bind(this)}>Add Blog</Button>
+        {/* ADD BLOG */}
 
-      <Modal isOpen={this.state.newBlogModal} toggle={this.toggleNewBlogModal.bind(this)}>
-        <ModalHeader toggle={this.toggleNewBlogModal.bind(this)}>Add a new blog</ModalHeader>
-        <ModalBody>
-          <FormGroup>
-            <Label for="title">Title</Label>
-            <Input id="title" value={this.state.newBlogData.title} onChange={(e) => {
-              let { newBlogData } = this.state;
+        <Button className="my-1" color="primary" onClick={this.toggleNewBlogModal.bind(this)}>Add Blog</Button>
 
-              newBlogData.title = e.target.value;
+        <Modal isOpen={this.state.newBlogModal} toggle={this.toggleNewBlogModal.bind(this)}>
+          <ModalHeader toggle={this.toggleNewBlogModal.bind(this)}>Add a new blog</ModalHeader>
+          <ModalBody>
+            <FormGroup>
+              <Label for="title">Title</Label>
+              <Input id="title" value={this.state.newBlogData.title} onChange={(e) => {
+                let { newBlogData } = this.state;
 
-              this.setState({ newBlogData });
-            }} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="content">Content</Label>
-            <Input id="content" type="textarea" value={this.state.newBlogData.content} onChange={(e) => {
-              let { newBlogData } = this.state;
+                newBlogData.title = e.target.value;
 
-              newBlogData.content = e.target.value;
+                this.setState({ newBlogData });
+              }} required/>
+            </FormGroup>
+            <FormGroup>
+              <Label for="content">Content</Label>
+              <Input id="content" type="textarea" value={this.state.newBlogData.content} onChange={(e) => {
+                let { newBlogData } = this.state;
 
-              this.setState({ newBlogData });
-            }}/>
-          </FormGroup>
+                newBlogData.content = e.target.value;
 
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={this.addBlog.bind(this)}>Add Blog</Button>{' '}
-          <Button color="secondary" onClick={this.toggleNewBlogModal.bind(this)}>Cancel</Button>
-        </ModalFooter>
-      </Modal>
+                this.setState({ newBlogData });
+              }} required/>
+            </FormGroup>
+          </ModalBody>
 
-      <Modal isOpen={this.state.editBlogModal} toggle={this.toggleEditBlogModal.bind(this)}>
-        <ModalHeader toggle={this.toggleEditBlogModal.bind(this)}>Edit a new blog</ModalHeader>
-        <ModalBody>
-          <FormGroup>
-            <Label for="title">Title</Label>
-            <Input id="title" value={this.state.editBlogData.title} onChange={(e) => {
-              let { editBlogData } = this.state;
+          <ModalFooter>
+            <Button color="primary" onClick={this.addBlog.bind(this)}>Add New Blog</Button>{' '}
+            <Button color="secondary" onClick={this.toggleNewBlogModal.bind(this)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
 
-              editBlogData.title = e.target.value;
+        <Modal isOpen={this.state.editBlogModal} toggle={this.toggleEditBlogModal.bind(this)}>
+          <ModalHeader toggle={this.toggleEditBlogModal.bind(this)}>Edit a new blog</ModalHeader>
+          <ModalBody>
+            <FormGroup>
+              <Label for="title">Title</Label>
+              <Input id="title" value={this.state.editBlogData.title} onChange={(e) => {
+                let { editBlogData } = this.state;
 
-              this.setState({ editBlogData });
-            }} required/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="content">Content</Label>
-            <Input id="content" value={this.state.editBlogData.content} onChange={(e) => {
-              let { editBlogData } = this.state;
+                editBlogData.title = e.target.value;
 
-              editBlogData.content = e.target.value;
+                this.setState({ editBlogData });
+              }} required/>
+            </FormGroup>
+            <FormGroup>
+              <Label for="content">Content</Label>
+              <Input id="content" value={this.state.editBlogData.content} onChange={(e) => {
+                let { editBlogData } = this.state;
 
-              this.setState({ editBlogData });
-            }} required/>
-          </FormGroup>
+                editBlogData.content = e.target.value;
 
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={this.updateBlog.bind(this)}>Update Blog</Button>{' '}
-          <Button color="secondary" onClick={this.toggleEditBlogModal.bind(this)}>Cancel</Button>
-        </ModalFooter>
-      </Modal>
+                this.setState({ editBlogData });
+              }} required/>
+            </FormGroup>
+          </ModalBody>
 
+          <ModalFooter>
+            <Button color="primary" onClick={this.updateBlog.bind(this)}>Update Blog</Button>{' '}
+            <Button color="secondary" onClick={this.toggleEditBlogModal.bind(this)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
 
         <Table>
           <thead>

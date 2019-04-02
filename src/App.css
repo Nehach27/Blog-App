@@ -101,3 +101,6 @@ hr {
 .signup_container {
   padding: 16px;
 }
+.errorMsg{
+  color: red;
+}
